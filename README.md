@@ -317,6 +317,23 @@ Lambda functions use env vars configured in AWS (table name, region, etc.).
 
 ## Local development
 
+### Pre-commit (secret scanning)
+
+Gitleaks runs on every commit via [pre-commit](https://pre-commit.com/):
+
+```bash
+uv sync
+uv run pre-commit install
+```
+
+Scan the whole repo manually:
+
+```bash
+uv run pre-commit run --all-files
+```
+
+To skip once (not recommended): `SKIP=gitleaks git commit ...`
+
 ### ECS FastAPI
 
 ```bash
